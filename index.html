@@ -27,7 +27,6 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -129,7 +128,6 @@
       border-radius: 20px;
       background: linear-gradient(135deg, var(--sky) 0%, var(--blue) 100%);
       display: flex; align-items: center; justify-content: center;
-      font-size: 5rem; color: var(--white);
       box-shadow: 0 12px 40px rgba(0,0,0,0.25);
       border: 3px solid rgba(255,255,255,0.15);
       overflow: hidden;
@@ -137,11 +135,6 @@
     }
     .hero-photo img {
       width: 100%; height: 100%; object-fit: cover;
-    }
-    .hero-photo .initials {
-      font-family: 'Source Serif 4', serif;
-      font-weight: 700; font-size: 4.5rem;
-      opacity: 0.9;
     }
 
     /* ---- SECTIONS ---- */
@@ -257,7 +250,6 @@
       position: absolute; left: -2rem; top: 8px;
       width: 14px; height: 14px;
       background: var(--white); border: 3px solid var(--blue);
-      border-radius: 50;
       border-radius: 50%;
     }
     .timeline-item.current::before {
@@ -285,7 +277,7 @@
       position: relative; line-height: 1.6;
     }
     .timeline-item li::before {
-      content: '›'; position: absolute; left: 0;
+      content: '>'; position: absolute; left: 0;
       color: var(--accent); font-weight: 700;
     }
 
@@ -386,7 +378,6 @@
       .hero-text .bio { max-width: 100%; }
       .hero-links { justify-content: center; }
       .hero-photo { width: 180px; height: 180px; margin: 0 auto; }
-      .hero-photo .initials { font-size: 3rem; }
       .nav-links { display: none; }
       .nav-links.open {
         display: flex; flex-direction: column;
@@ -428,11 +419,11 @@
     <div class="hero-text">
       <h1>Amirmoez Jamaat</h1>
       <div class="title">
-        Ph.D. Student · Major in Water Resource Management · Minor in Computational Science<br>
+        Ph.D. Student &middot; Major in Water Resource Management &middot; Minor in Computational Science<br>
         The Pennsylvania State University
       </div>
       <p class="bio">
-        Accurate flood forecasting demands more than deterministic predictions — it requires 
+        Accurate flood forecasting demands more than deterministic predictions &mdash; it requires 
         probabilistic ensemble approaches that account for the deep uncertainties inherent in both 
         modeling and real-time forcing data. My research bridges this gap by developing AI-driven 
         frameworks that integrate data assimilation, deep learning, and generative modeling to 
@@ -445,8 +436,8 @@
         <a href="https://scholar.google.com/citations?user=aB3tFZMAAAAJ&hl=en" target="_blank" class="primary">
           <i class="fas fa-graduation-cap"></i> Google Scholar
         </a>
-        <a href="/cdn-cgi/l/email-protection#bedfd8d48b8a8789fececdcb90dbdacb" class="secondary">
-          <i class="fas fa-envelope"></i> <span class="__cf_email__" data-cfemail="9bfafdf1aeafa2acdbebe8eeb5feffee">[email&#160;protected]</span>
+        <a href="mailto:afj5497@psu.edu" class="secondary">
+          <i class="fas fa-envelope"></i> afj5497@psu.edu
         </a>
         <a href="#" class="secondary">
           <i class="fab fa-github"></i> GitHub
@@ -454,8 +445,7 @@
       </div>
     </div>
     <div class="hero-photo">
-      <!-- Upload photo.jpg to your GitHub repo -->
-      <img src="Pic.jpg" alt="Amirmoez Jamaat at AGU 2025">
+      <img src="Pic.jpg" alt="Amirmoez Jamaat">
     </div>
   </div>
 </section>
@@ -503,7 +493,7 @@
         </div>
       </div>
       <div class="edu-meta">
-        <div class="date">Aug 2023 – Present</div>
+        <div class="date">Aug 2023 &ndash; Present</div>
         <div class="gpa">GPA: 3.97</div>
       </div>
     </div>
@@ -518,7 +508,7 @@
         </div>
       </div>
       <div class="edu-meta">
-        <div class="date">Aug 2023 – Aug 2025</div>
+        <div class="date">Aug 2023 &ndash; Aug 2025</div>
         <div class="gpa">GPA: 3.96</div>
       </div>
     </div>
@@ -529,12 +519,12 @@
         <h3>M.Sc. in Water Resource Management &amp; Engineering</h3>
         <div class="school">Sharif University of Technology, Tehran, Iran</div>
         <div class="thesis">
-          Thesis: "Data Assimilation and Development of a 3D Hydrodynamic–Water Quality Model in Lake Urmia Using Remote Sensing and Field Data"<br>
-          Ranked 2nd / 30 — Grade: A
+          Thesis: "Data Assimilation and Development of a 3D Hydrodynamic&ndash;Water Quality Model in Lake Urmia Using Remote Sensing and Field Data"<br>
+          Ranked 2nd / 30 &mdash; Grade: A
         </div>
       </div>
       <div class="edu-meta">
-        <div class="date">Oct 2020 – July 2023</div>
+        <div class="date">Oct 2020 &ndash; July 2023</div>
         <div class="gpa">GPA: 3.90</div>
       </div>
     </div>
@@ -547,7 +537,7 @@
         <div class="thesis">Top 5% (last two years)</div>
       </div>
       <div class="edu-meta">
-        <div class="date">Oct 2016 – Sept 2020</div>
+        <div class="date">Oct 2016 &ndash; Sept 2020</div>
         <div class="gpa">GPA: 3.35</div>
       </div>
     </div>
@@ -570,7 +560,7 @@
     <span class="pub-number">1</span>
     <div class="pub-title">Update hydrological states or meteorological forcings? Comparing data assimilation methods for differentiable hydrologic models</div>
     <div class="pub-authors"><strong>Jamaat, A.</strong>, Song, Y., Rahmani, F., Liu, J., Lawson, K., &amp; Shen, C.</div>
-    <div class="pub-venue"><em>Journal of Hydrology</em>, 663, 134137 &nbsp;·&nbsp; <a href="https://doi.org/10.1016/j.jhydrol.2025.134137" target="_blank">DOI</a></div>
+    <div class="pub-venue"><em>Journal of Hydrology</em>, 663, 134137 &nbsp;&middot;&nbsp; <a href="https://doi.org/10.1016/j.jhydrol.2025.134137" target="_blank">DOI</a></div>
     <span class="pub-year">2025</span>
   </div>
 
@@ -578,7 +568,7 @@
     <span class="pub-number">2</span>
     <div class="pub-title">Numerical study of hydrodynamics and salinity transport processes in a hypersaline lake: A case study of Lake Urmia</div>
     <div class="pub-authors">Safaie, A., &amp; <strong>Jamaat, A.</strong></div>
-    <div class="pub-venue"><em>Advances in Water Resources</em>, 185, 104632 &nbsp;·&nbsp; <a href="https://doi.org/10.1016/j.advwatres.2024.104632" target="_blank">DOI</a></div>
+    <div class="pub-venue"><em>Advances in Water Resources</em>, 185, 104632 &nbsp;&middot;&nbsp; <a href="https://doi.org/10.1016/j.advwatres.2024.104632" target="_blank">DOI</a></div>
     <span class="pub-year">2024</span>
   </div>
 
@@ -594,7 +584,7 @@
 
   <div class="pub-card">
     <span class="pub-number">4</span>
-    <div class="pub-title">Compound extreme hydrological–nutrient events in the Chesapeake Bay: Machine learning predictions under climate change</div>
+    <div class="pub-title">Compound extreme hydrological&ndash;nutrient events in the Chesapeake Bay: Machine learning predictions under climate change</div>
     <div class="pub-authors"><strong>Jamaat, A.</strong>, Grun, A., Obringer, R., Mejia, A., &amp; Raj, C.</div>
     <div class="pub-venue"><em>AGU Annual Meeting 2025</em></div>
     <span class="pub-year">2025</span>
@@ -634,7 +624,7 @@
 
   <div class="pub-card">
     <span class="pub-number">9</span>
-    <div class="pub-title">Detection of land use–land cover changes in Anzali Wetland using a remote sensing-based approach</div>
+    <div class="pub-title">Detection of land use&ndash;land cover changes in Anzali Wetland using a remote sensing-based approach</div>
     <div class="pub-authors"><strong>Jamaat, A.</strong> &amp; Safaie, A.</div>
     <div class="pub-venue"><em>EGU General Assembly 2021</em>, Vienna, Austria</div>
     <span class="pub-year">2021</span>
@@ -644,7 +634,7 @@
     <span class="pub-number">10</span>
     <div class="pub-title">Estimation of GPM rainfall for flood occurrences based on the probability distribution of monthly precipitation: A case study in Iran</div>
     <div class="pub-authors">Ahmadi, M., Kaheh, S., Sadeghi, H., &amp; <strong>Jamaat, A.</strong></div>
-    <div class="pub-venue"><em>Geo-Extreme 2021</em>, ASCE, 285–295</div>
+    <div class="pub-venue"><em>Geo-Extreme 2021</em>, ASCE, 285&ndash;295</div>
     <span class="pub-year">2021</span>
   </div>
 
@@ -677,7 +667,7 @@
 
     <div class="timeline-item current">
       <h3>PhD Student</h3>
-      <div class="meta">Penn State University — Advisor: Prof. Alfonso Mejia <span class="date">· Aug 2023 – Present</span></div>
+      <div class="meta">Penn State University &mdash; Advisor: Prof. Alfonso Mejia <span class="date">&middot; Aug 2023 &ndash; Present</span></div>
       <ul>
         <li>Variational data assimilation and deep learning in hydrological modeling</li>
         <li>Probabilistic machine learning for real-time flood forecasting and compound extreme events</li>
@@ -689,7 +679,7 @@
 
     <div class="timeline-item">
       <h3>Graduate Research Assistant (M.Sc. Thesis)</h3>
-      <div class="meta">Sharif University of Technology — Advisor: Prof. Ammar Safaie <span class="date">· Sept 2020 – Feb 2023</span></div>
+      <div class="meta">Sharif University of Technology &mdash; Advisor: Prof. Ammar Safaie <span class="date">&middot; Sept 2020 &ndash; Feb 2023</span></div>
       <ul>
         <li>Assimilated in-situ and satellite remote sensing data to simulate flow regime, salinity, temperature, and water level fluctuations of Lake Urmia using FVCOM</li>
         <li>Modeled Lake Urmia volume and salt sedimentation; investigated impact of snow cover changes on hydrodynamic patterns</li>
@@ -699,7 +689,7 @@
 
     <div class="timeline-item">
       <h3>Graduate Research Assistant</h3>
-      <div class="meta">Sharif University of Technology <span class="date">· May 2021 – Feb 2022</span></div>
+      <div class="meta">Sharif University of Technology <span class="date">&middot; May 2021 &ndash; Feb 2022</span></div>
       <ul>
         <li>Conducted signature-based calibration of the HBV model in Oldman, Banff, and Bow basins with multi-objective optimization</li>
         <li>Investigated vegetation dynamics, soil moisture, and hydrological response in snow-dominated catchments</li>
@@ -707,8 +697,8 @@
     </div>
 
     <div class="timeline-item">
-      <h3>Graduate Researcher — Team Leader</h3>
-      <div class="meta">Sharif Policy Research Institute <span class="date">· Dec 2021 – Dec 2022</span></div>
+      <h3>Graduate Researcher &mdash; Team Leader</h3>
+      <div class="meta">Sharif Policy Research Institute <span class="date">&middot; Dec 2021 &ndash; Dec 2022</span></div>
       <ul>
         <li>Led strategies for value chain development of livelihoods in the Lake Urmia basin</li>
         <li>Conducted research on Nexus and Sustainable Development Goals (SDG)</li>
@@ -717,7 +707,7 @@
 
     <div class="timeline-item">
       <h3>Researcher</h3>
-      <div class="meta">Center for Infrastructure Sustainability &amp; Resilience Research, Sharif University <span class="date">· Oct 2020 – Oct 2022</span></div>
+      <div class="meta">Center for Infrastructure Sustainability &amp; Resilience Research, Sharif University <span class="date">&middot; Oct 2020 &ndash; Oct 2022</span></div>
       <ul>
         <li>Developed flood hazard mapping based on 2019 Iran floods using HEC-RAS and Sentinel-1 SAR data</li>
         <li>Conducted comprehensive drought monitoring across Iran using multi-satellite data analysis</li>
@@ -726,9 +716,9 @@
 
     <div class="timeline-item">
       <h3>Undergraduate Research Assistant</h3>
-      <div class="meta">Sharif University of Technology <span class="date">· Aug 2018 – Aug 2020</span></div>
+      <div class="meta">Sharif University of Technology <span class="date">&middot; Aug 2018 &ndash; Aug 2020</span></div>
       <ul>
-        <li>Analyzed vegetation dynamics in Anzali Wetland using remote sensing and ML (1990–2020)</li>
+        <li>Analyzed vegetation dynamics in Anzali Wetland using remote sensing and ML (1990&ndash;2020)</li>
         <li>Developed advanced soil moisture algorithms; applied empirical dynamic modeling (EDM)</li>
         <li>Investigated satellite precipitation products for flood occurrence</li>
       </ul>
@@ -768,29 +758,80 @@
   </div>
 </div>
 
+<hr class="section-divider">
+
+<!-- HONORS -->
+<div class="section fade-in" id="honors">
+  <div class="section-header">
+    <h2>Honors &amp; Awards</h2>
+    <div class="underline"></div>
+  </div>
+  <ul style="list-style:none; padding:0;">
+    <li style="padding:0.5rem 0; font-size:0.95rem; color:var(--text-secondary);">
+      <i class="fas fa-award" style="color:var(--accent); margin-right:0.5rem;"></i>
+      Ranked 2nd among M.Sc. students of Water Resources &amp; Environmental Engineering, Sharif University of Technology
+    </li>
+  </ul>
+</div>
+
+<hr class="section-divider">
+
+<!-- COURSEWORK -->
+<div class="section fade-in" id="coursework">
+  <div class="section-header">
+    <h2>Selected Graduate Coursework</h2>
+    <div class="underline"></div>
+  </div>
+  <div class="interests-grid">
+    <span class="interest-tag">Computational Intelligence &amp; Analysis of Randomness in Engineering</span>
+    <span class="interest-tag">Data Assimilation</span>
+    <span class="interest-tag">AI in Geoscience</span>
+    <span class="interest-tag">Environmental Hydrodynamics</span>
+    <span class="interest-tag">Uncertainty Analysis in Hydrological Modeling</span>
+    <span class="interest-tag">Numerical Modeling &amp; Computing Methods</span>
+    <span class="interest-tag">ArcGIS Programming</span>
+    <span class="interest-tag">Surface Hydrology</span>
+    <span class="interest-tag">Remote Sensing &amp; GIS</span>
+    <span class="interest-tag">Risk, Resilience &amp; Reliability</span>
+    <span class="interest-tag">Climate Change (Audit)</span>
+    <span class="interest-tag">Process Principles in Environmental Eng.</span>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-links">
-    <a href="/cdn-cgi/l/email-protection#adcccbc79899949aedddded883c8c9d8"><i class="fas fa-envelope"></i> Email</a>
+    <a href="mailto:afj5497@psu.edu"><i class="fas fa-envelope"></i> Email</a>
     <a href="https://scholar.google.com/citations?user=aB3tFZMAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
     <a href="#"><i class="fab fa-github"></i> GitHub</a>
   </div>
-  <p>&copy; 2025 Amirmoez Jamaat · Penn State University</p>
+  <p>&copy; 2025 Amirmoez Jamaat &middot; Penn State University</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Nav scroll effect
-  window.addEventListener('scroll', () => {
+  window.addEventListener('scroll', function() {
     document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
   });
 
   // Fade-in on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
       }
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.fade-in').forEach(el => obs
+  document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+
+  // Close mobile menu on link click
+  document.querySelectorAll('.nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>
