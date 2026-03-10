@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amirmoez Jamaat — PhD Researcher, Penn State University</title>
+  <meta name="description" content="Amirmoez Jamaat — PhD Student in Water Resource Engineering at Penn State University. Research in deep learning, data assimilation, probabilistic modeling, and flood hydrology.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --navy: #001d3d;
+      --navy-mid: #003566;
+      --blue: #0353a4;
+      --sky: #b9d6f2;
+      --pale: #eef4fb;
+      --cream: #fafbfd;
+      --white: #ffffff;
+      --text: #1a1a2e;
+      --text-secondary: #4a5568;
+      --accent: #d4a017;
+      --border: #d6dfe8;
+      --shadow: 0 2px 20px rgba(0,29,61,0.07);
+      --shadow-lg: 0 8px 40px rgba(0,29,61,0.1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---- NAV ---- */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: var(--shadow); }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 60px;
+    }
+    .nav-name {
+      font-family: 'Source Serif 4', serif;
+      font-weight: 700; font-size: 1.15rem; color: var(--navy);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 0.2rem; }
+    .nav-links a {
+      color: var(--text-secondary); text-decoration: none;
+      font-size: 0.88rem; font-weight: 500;
+      padding: 0.4rem 0.85rem; border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .nav-links a:hover { color: var(--navy); background: var(--pale); }
+    .nav-toggle { display: none; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--navy); }
+
+    /* ---- HERO ---- */
+    .hero {
+      padding: 140px 2rem 80px;
+      background: linear-gradient(165deg, var(--navy) 0%, var(--navy-mid) 55%, var(--blue) 100%);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -50%; right: -20%;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(180,214,242,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; bottom: -30%; left: -10%;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(212,160,23,0.06) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 300px; gap: 4rem;
+      align-items: center; position: relative; z-index: 1;
+    }
+    .hero-text h1 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 3rem; font-weight: 700; color: var(--white);
+      line-height: 1.15; margin-bottom: 0.6rem;
+    }
+    .hero-text .title {
+      font-size: 1.15rem; color: var(--sky);
+      font-weight: 400; margin-bottom: 1.4rem; line-height: 1.5;
+    }
+    .hero-text .bio {
+      font-size: 0.95rem; color: rgba(255,255,255,0.72);
+      line-height: 1.8; margin-bottom: 2rem; max-width: 560px;
+    }
+    .hero-links { display: flex; gap: 0.7rem; flex-wrap: wrap; }
+    .hero-links a {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      padding: 0.55rem 1.1rem; border-radius: 8px;
+      font-size: 0.85rem; font-weight: 600; text-decoration: none;
+      transition: all 0.25s;
+    }
+    .hero-links .primary {
+      background: var(--accent); color: var(--navy);
+    }
+    .hero-links .primary:hover { background: #e6b422; transform: translateY(-1px); }
+    .hero-links .secondary {
+      background: rgba(255,255,255,0.1); color: var(--white);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .hero-links .secondary:hover { background: rgba(255,255,255,0.18); }
+
+    .hero-photo {
+      width: 260px; height: 260px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--sky) 0%, var(--blue) 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 5rem; color: var(--white);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+      border: 3px solid rgba(255,255,255,0.15);
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-photo img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .hero-photo .initials {
+      font-family: 'Source Serif 4', serif;
+      font-weight: 700; font-size: 4.5rem;
+      opacity: 0.9;
+    }
+
+    /* ---- SECTIONS ---- */
+    .section {
+      max-width: 1100px; margin: 0 auto;
+      padding: 4.5rem 2rem;
+    }
+    .section-header {
+      margin-bottom: 2.5rem;
+    }
+    .section-header h2 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 2rem; font-weight: 700; color: var(--navy);
+      margin-bottom: 0.3rem;
+    }
+    .section-header .underline {
+      width: 50px; height: 3px;
+      background: var(--accent); border-radius: 2px;
+    }
+    .section-divider {
+      border: none; border-top: 1px solid var(--border);
+      max-width: 1100px; margin: 0 auto;
+    }
+
+    /* ---- RESEARCH INTERESTS ---- */
+    .interests-grid {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+    }
+    .interest-tag {
+      padding: 0.5rem 1.1rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 0.88rem; font-weight: 500;
+      color: var(--navy-mid);
+      transition: all 0.2s;
+    }
+    .interest-tag:hover {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    /* ---- PUBLICATIONS ---- */
+    .pub-group-title {
+      font-family: 'Source Serif 4', serif;
+      font-size: 1.25rem; font-weight: 600; color: var(--navy-mid);
+      margin-bottom: 1.2rem; margin-top: 2rem;
+    }
+    .pub-group-title:first-child { margin-top: 0; }
+    .pub-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.4rem 1.6rem;
+      margin-bottom: 0.8rem;
+      transition: all 0.25s;
+      position: relative;
+    }
+    .pub-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+      border-color: var(--sky);
+    }
+    .pub-card .pub-number {
+      position: absolute; top: 1.4rem; left: -0.6rem;
+      background: var(--navy); color: var(--white);
+      width: 26px; height: 26px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.72rem; font-weight: 700;
+    }
+    .pub-card .pub-title {
+      font-weight: 600; font-size: 0.95rem; color: var(--text);
+      margin-bottom: 0.35rem; line-height: 1.5;
+      padding-left: 0.8rem;
+    }
+    .pub-card .pub-authors {
+      font-size: 0.85rem; color: var(--text-secondary);
+      margin-bottom: 0.35rem; padding-left: 0.8rem;
+    }
+    .pub-card .pub-authors strong { color: var(--navy); font-weight: 600; }
+    .pub-card .pub-venue {
+      font-size: 0.82rem; color: var(--blue); font-style: italic;
+      padding-left: 0.8rem;
+    }
+    .pub-card .pub-venue a {
+      color: var(--blue); text-decoration: none;
+      font-weight: 600; font-style: normal;
+    }
+    .pub-card .pub-venue a:hover { text-decoration: underline; }
+    .pub-year {
+      display: inline-block;
+      background: var(--pale); color: var(--navy-mid);
+      font-size: 0.75rem; font-weight: 600;
+      padding: 0.15rem 0.6rem; border-radius: 4px;
+      margin-left: 0.8rem; margin-top: 0.4rem;
+    }
+
+    /* ---- EXPERIENCE TIMELINE ---- */
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 6px; top: 8px; bottom: 8px;
+      width: 2px; background: var(--border);
+    }
+    .timeline-item {
+      position: relative; margin-bottom: 2.2rem;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute; left: -2rem; top: 8px;
+      width: 14px; height: 14px;
+      background: var(--white); border: 3px solid var(--blue);
+      border-radius: 50;
+      border-radius: 50%;
+    }
+    .timeline-item.current::before {
+      background: var(--blue); border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(3,83,164,0.15);
+    }
+    .timeline-item h3 {
+      font-size: 1.05rem; font-weight: 700; color: var(--navy);
+      margin-bottom: 0.15rem;
+    }
+    .timeline-item .meta {
+      font-size: 0.85rem; color: var(--blue); font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+    .timeline-item .meta .date {
+      color: var(--text-secondary); font-weight: 400;
+      margin-left: 0.3rem;
+    }
+    .timeline-item ul {
+      list-style: none; padding: 0;
+    }
+    .timeline-item li {
+      font-size: 0.9rem; color: var(--text-secondary);
+      padding: 0.2rem 0; padding-left: 1rem;
+      position: relative; line-height: 1.6;
+    }
+    .timeline-item li::before {
+      content: '›'; position: absolute; left: 0;
+      color: var(--accent); font-weight: 700;
+    }
+
+    /* ---- EDUCATION ---- */
+    .edu-grid { display: flex; flex-direction: column; gap: 1rem; }
+    .edu-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem 1.8rem;
+      display: grid; grid-template-columns: auto 1fr auto;
+      gap: 1.2rem; align-items: start;
+      transition: all 0.25s;
+    }
+    .edu-card:hover {
+      box-shadow: var(--shadow);
+      border-color: var(--sky);
+    }
+    .edu-icon {
+      width: 48px; height: 48px;
+      background: var(--pale);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; color: var(--navy);
+    }
+    .edu-info h3 {
+      font-size: 1rem; font-weight: 700; color: var(--navy);
+      margin-bottom: 0.15rem;
+    }
+    .edu-info .school {
+      font-size: 0.88rem; color: var(--blue); font-weight: 500;
+    }
+    .edu-info .thesis {
+      font-size: 0.83rem; color: var(--text-secondary);
+      margin-top: 0.4rem; font-style: italic; line-height: 1.5;
+    }
+    .edu-meta {
+      text-align: right;
+    }
+    .edu-meta .date {
+      font-size: 0.82rem; color: var(--text-secondary); white-space: nowrap;
+    }
+    .edu-meta .gpa {
+      font-size: 0.82rem; font-weight: 700; color: var(--accent);
+      margin-top: 0.2rem;
+    }
+
+    /* ---- TEACHING ---- */
+    .teaching-group { margin-bottom: 2rem; }
+    .teaching-group h3 {
+      font-size: 1.05rem; font-weight: 700; color: var(--navy);
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--pale);
+    }
+    .teaching-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .teaching-chip {
+      padding: 0.4rem 1rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.85rem; color: var(--text-secondary);
+    }
+    .teaching-chip .level {
+      font-size: 0.72rem; font-weight: 600;
+      color: var(--blue); margin-left: 0.3rem;
+    }
+
+    /* ---- FOOTER ---- */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 3rem 2rem;
+      font-size: 0.85rem;
+    }
+    footer .footer-links {
+      display: flex; justify-content: center; gap: 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+    footer a {
+      color: var(--sky); text-decoration: none;
+      font-weight: 500; transition: color 0.2s;
+    }
+    footer a:hover { color: var(--white); }
+
+    /* ---- ANIMATIONS ---- */
+    .fade-in {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+      .hero-text h1 { font-size: 2.2rem; }
+      .hero-text .bio { max-width: 100%; }
+      .hero-links { justify-content: center; }
+      .hero-photo { width: 180px; height: 180px; margin: 0 auto; }
+      .hero-photo .initials { font-size: 3rem; }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 60px; left: 0; right: 0;
+        background: var(--white); padding: 1rem;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow);
+      }
+      .nav-toggle { display: block; }
+      .edu-card { grid-template-columns: 1fr; gap: 0.6rem; }
+      .edu-meta { text-align: left; }
+      .edu-icon { display: none; }
+      .section { padding: 3rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-name">A. Jamaat</a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#teaching">Teaching</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="about">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>Amirmoez Jamaat</h1>
+      <div class="title">
+        Ph.D. Student in Water Resource Engineering<br>
+        The Pennsylvania State University
+      </div>
+      <p class="bio">
+        My research lies at the intersection of deep learning, probabilistic modeling, and hydrology. I develop 
+        data assimilation and AI-driven frameworks for real-time flood forecasting, compound extreme events, 
+        and uncertainty quantification in hydro-climate systems. I hold two M.Sc. degrees — from Penn State and 
+        Sharif University of Technology — and a B.Sc. in Civil Engineering from Sharif.
+      </p>
+      <div class="hero-links">
+        <a href="https://scholar.google.com/citations?user=aB3tFZMAAAAJ&hl=en" target="_blank" class="primary">
+          <i class="fas fa-graduation-cap"></i> Google Scholar
+        </a>
+        <a href="mailto:afj5497@psu.edu" class="secondary">
+          <i class="fas fa-envelope"></i> afj5497@psu.edu
+        </a>
+        <a href="#" class="secondary">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <!-- Replace the initials below with: <img src="your-photo.jpg" alt="Amirmoez Jamaat"> -->
+      <span class="initials">AJ</span>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH INTERESTS -->
+<div class="section fade-in" id="interests">
+  <div class="section-header">
+    <h2>Research Interests</h2>
+    <div class="underline"></div>
+  </div>
+  <div class="interests-grid">
+    <span class="interest-tag">Deep Learning</span>
+    <span class="interest-tag">Probabilistic Modeling</span>
+    <span class="interest-tag">Reinforcement Learning</span>
+    <span class="interest-tag">Data Assimilation</span>
+    <span class="interest-tag">Flood &amp; Drought Hydrology</span>
+    <span class="interest-tag">Remote Sensing</span>
+    <span class="interest-tag">Hydrodynamic Modeling</span>
+    <span class="interest-tag">Climate Risk &amp; Resilience</span>
+    <span class="interest-tag">Compound Extreme Events</span>
+    <span class="interest-tag">Big Data in Hydrology</span>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- EDUCATION -->
+<div class="section fade-in" id="education">
+  <div class="section-header">
+    <h2>Education</h2>
+    <div class="underline"></div>
+  </div>
+  <div class="edu-grid">
+
+    <div class="edu-card">
+      <div class="edu-icon"><i class="fas fa-flask"></i></div>
+      <div class="edu-info">
+        <h3>Ph.D. in Water Resource Engineering</h3>
+        <div class="school">The Pennsylvania State University</div>
+        <div class="thesis">
+          Major: Water Resource Engineering, Dept. of Civil &amp; Environmental Engineering<br>
+          Minor: Computational Science<br>
+          Dissertation: "Probabilistic Deep Learning for Real-Time Flood Forecasting"<br>
+          Advisor: Prof. Alfonso Mejia
+        </div>
+      </div>
+      <div class="edu-meta">
+        <div class="date">Aug 2023 – Present</div>
+        <div class="gpa">GPA: 3.97</div>
+      </div>
+    </div>
+
+    <div class="edu-card">
+      <div class="edu-icon"><i class="fas fa-water"></i></div>
+      <div class="edu-info">
+        <h3>M.Sc. in Water Resource Management, Civil Engineering <span style="font-weight:400; font-size:0.85rem; color:var(--text-secondary);">(Along the Way)</span></h3>
+        <div class="school">The Pennsylvania State University</div>
+        <div class="thesis">
+          Thesis: "Comparing Data Assimilation Methods for Differentiable Hydrologic Models"
+        </div>
+      </div>
+      <div class="edu-meta">
+        <div class="date">Aug 2023 – Aug 2025</div>
+        <div class="gpa">GPA: 3.96</div>
+      </div>
+    </div>
+
+    <div class="edu-card">
+      <div class="edu-icon"><i class="fas fa-water"></i></div>
+      <div class="edu-info">
+        <h3>M.Sc. in Water Resource Management &amp; Engineering</h3>
+        <div class="school">Sharif University of Technology, Tehran, Iran</div>
+        <div class="thesis">
+          Thesis: "Data Assimilation and Development of a 3D Hydrodynamic–Water Quality Model in Lake Urmia Using Remote Sensing and Field Data"<br>
+          Ranked 2nd / 30 — Grade: A
+        </div>
+      </div>
+      <div class="edu-meta">
+        <div class="date">Oct 2020 – July 2023</div>
+        <div class="gpa">GPA: 3.90</div>
+      </div>
+    </div>
+
+    <div class="edu-card">
+      <div class="edu-icon"><i class="fas fa-hard-hat"></i></div>
+      <div class="edu-info">
+        <h3>B.Sc. in Civil Engineering</h3>
+        <div class="school">Sharif University of Technology, Tehran, Iran</div>
+        <div class="thesis">Top 5% (last two years)</div>
+      </div>
+      <div class="edu-meta">
+        <div class="date">Oct 2016 – Sept 2020</div>
+        <div class="gpa">GPA: 3.35</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- PUBLICATIONS -->
+<div class="section fade-in" id="publications">
+  <div class="section-header">
+    <h2>Publications</h2>
+    <div class="underline"></div>
+  </div>
+
+  <div class="pub-group-title">Journal Articles</div>
+
+  <div class="pub-card">
+    <span class="pub-number">1</span>
+    <div class="pub-title">Update hydrological states or meteorological forcings? Comparing data assimilation methods for differentiable hydrologic models</div>
+    <div class="pub-authors"><strong>Jamaat, A.</strong>, Song, Y., Rahmani, F., Liu, J., Lawson, K., &amp; Shen, C.</div>
+    <div class="pub-venue"><em>Journal of Hydrology</em>, 663, 134137 &nbsp;·&nbsp; <a href="https://doi.org/10.1016/j.jhydrol.2025.134137" target="_blank">DOI</a></div>
+    <span class="pub-year">2025</span>
+  </div>
+
+  <div class="pub-card">
+    <span class="pub-number">2</span>
+    <div class="pub-title">Numerical study of hydrodynamics and salinity transport processes in a hypersaline lake: A case study of Lake Urmia</div>
+    <div class="pub-authors">Safaie, A., &amp; <strong>Jamaat, A.</strong></div>
+    <div class="pub-venue"><em>Advances in Water Resources</em>, 185, 104632 &nbsp;·&nbsp; <a href="https://doi.org/10.1016/j.advwatres.2024.104632" target="_blank">DOI</a></div>
+    <span class="pub-year">2024</span>
+  </div>
+
+  <div class="pub-group-title">Conference Papers &amp; Presentations</div>
+
+  <div class="pub-card">
+    <span class="pub-number">3</span>
+    <div class="pub-title">Advancing operational flash flood forecasting through efficient deep neural networks</div>
+    <div class="pub-authors"><strong>Jamaat, A.</strong>, Mejia, A., &amp; Raj, C.</div>
+    <div class="pub-venue"><em>AGU Annual Meeting 2025</em></div>
+    <span class="pub-year">2025</span>
+  </div>
+
+  <div class="pub-card">
+    <span class="pub-number">4</span>
+    <div class="pub-title">Compound extreme hydrological–nutrient events in the Chesapeake Bay: Machine learning predictions under climate change</div>
+    <div class="pub-authors"><strong>Jamaat, A.</strong>, Grun, A., Obringer, R., Mejia, A., &amp; Raj, C.</div>
+    <div class="pub-venue"><em>AGU Annual Meeting 2025</em></div>
+    <span class="pub-year">2025</span>
+  </div>
+
+  <div class="pub-card">
+    <span class="pub-number">5</span>
+    <div class="pub-title">Comparing data assimilation methods for physics-informed machine learning hydrologic models</div>
+    <div class="pub-authors"><strong>Jamaat, A.</strong>, Song, Y., Shen, C., Rahmani, F., &amp; Liu, J.</div>
+    <div class="pub-venue"><em>AGU Annual Meeting 2024</em>, Washington, DC</div>
+    <span class="pub-year">2024</span>
+  </div>
+
+  <div class="pub-card">
+    <span class="pub-number">6</span>
+    <div class="pub-title">Integrating Sentinel-5P satellite data and machine learning algorithms for air quality index prediction in Tehran</div>
+    <div class="pub-authors">Kafi, A.M., Hosseinipoor, M., Zare Shahne, M., &amp; <strong>Jamaat, A.</strong></div>
+    <div class="pub-venue"><em>EGU General Assembly 2024</em>, Vienna, Austria</div>
+    <span class="pub-year">2024</span>
+  </div>
+
+  <div class="pub-card">
+    <span class="pub-number">7</span>
+    <div class="pub-title">Flood risk assessment in croplands using a combination of remote sensing and hydrodynamic models: Case study of Mississippi River</div>
+    <div class="pub-authors"><strong>Jamaat, A.</strong>, Zia, O., &amp; Safaie, A.</div>
+    <div class="pub-venue"><em>AGU Fall Meeting 2022</em>, Chicago, IL</div>
+    <span class="pub-year">2022</span>
+  </div>
+
+  <div class="pub-card">
+    <span class="pub-number">8</span>
+    <div class="pub-title">Development and validation of a flood potential zoning map: Case study based on the 2019 flooding in Iran</div>
+    <div class="pub-authors">Ahmadi, M., Rafiei, F., <strong>Jamaat, A.</strong>, Aliaei, M., &amp; Safaie, A.</div>
+    <div class="pub-venue"><em>Center for Infrastructure Sustainability and Resilience Research</em>, Sharif University of Technology</div>
+    <span class="pub-year">2021</span>
+  </div>
+
+  <div class="pub-card">
+    <span class="pub-number">9</span>
+    <div class="pub-title">Detection of land use–land cover changes in Anzali Wetland using a remote sensing-based approach</div>
+    <div class="pub-authors"><strong>Jamaat, A.</strong> &amp; Safaie, A.</div>
+    <div class="pub-venue"><em>EGU General Assembly 2021</em>, Vienna, Austria</div>
+    <span class="pub-year">2021</span>
+  </div>
+
+  <div class="pub-card">
+    <span class="pub-number">10</span>
+    <div class="pub-title">Estimation of GPM rainfall for flood occurrences based on the probability distribution of monthly precipitation: A case study in Iran</div>
+    <div class="pub-authors">Ahmadi, M., Kaheh, S., Sadeghi, H., &amp; <strong>Jamaat, A.</strong></div>
+    <div class="pub-venue"><em>Geo-Extreme 2021</em>, ASCE, 285–295</div>
+    <span class="pub-year">2021</span>
+  </div>
+
+  <div class="pub-card">
+    <span class="pub-number">11</span>
+    <div class="pub-title">Investigation of dust and air dynamics in the Lake Urmia basin with air pollution index by reliability and risk analysis</div>
+    <div class="pub-authors"><strong>Jamaat, A.</strong> &amp; Hekmatian, M.A.</div>
+    <div class="pub-venue"><em>National Conference SCWMRI</em>, Tehran, Iran</div>
+    <span class="pub-year">2021</span>
+  </div>
+
+  <div class="pub-card">
+    <span class="pub-number">12</span>
+    <div class="pub-title">The effect of Caspian Sea water-level drop on physical processes of coastal wetlands</div>
+    <div class="pub-authors">Safaie, A., Firouzeh, H., &amp; <strong>Jamaat, A.</strong></div>
+    <div class="pub-venue"><em>IAGLR Annual Conference on Great Lakes Research</em>, Winnipeg, Canada</div>
+    <span class="pub-year">2020</span>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- RESEARCH EXPERIENCE -->
+<div class="section fade-in" id="experience">
+  <div class="section-header">
+    <h2>Research Experience</h2>
+    <div class="underline"></div>
+  </div>
+  <div class="timeline">
+
+    <div class="timeline-item current">
+      <h3>PhD Student</h3>
+      <div class="meta">Penn State University — Advisor: Prof. Alfonso Mejia <span class="date">· Aug 2023 – Present</span></div>
+      <ul>
+        <li>Variational data assimilation and deep learning in hydrological modeling</li>
+        <li>Probabilistic machine learning for real-time flood forecasting and compound extreme events</li>
+        <li>Generative AI and agentic AI frameworks for hydrological modeling</li>
+        <li>Reinforcement learning in probabilistic hydrological modeling</li>
+        <li>Risk and uncertainty analysis in hydro-climate predictions</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Graduate Research Assistant (M.Sc. Thesis)</h3>
+      <div class="meta">Sharif University of Technology — Advisor: Prof. Ammar Safaie <span class="date">· Sept 2020 – Feb 2023</span></div>
+      <ul>
+        <li>Assimilated in-situ and satellite remote sensing data to simulate flow regime, salinity, temperature, and water level fluctuations of Lake Urmia using FVCOM</li>
+        <li>Modeled Lake Urmia volume and salt sedimentation; investigated impact of snow cover changes on hydrodynamic patterns</li>
+        <li>Performed long-term spatial hydro-climate pattern analysis and downscaled satellite soil moisture products using radar data and ML</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Graduate Research Assistant</h3>
+      <div class="meta">Sharif University of Technology <span class="date">· May 2021 – Feb 2022</span></div>
+      <ul>
+        <li>Conducted signature-based calibration of the HBV model in Oldman, Banff, and Bow basins with multi-objective optimization</li>
+        <li>Investigated vegetation dynamics, soil moisture, and hydrological response in snow-dominated catchments</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Graduate Researcher — Team Leader</h3>
+      <div class="meta">Sharif Policy Research Institute <span class="date">· Dec 2021 – Dec 2022</span></div>
+      <ul>
+        <li>Led strategies for value chain development of livelihoods in the Lake Urmia basin</li>
+        <li>Conducted research on Nexus and Sustainable Development Goals (SDG)</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Researcher</h3>
+      <div class="meta">Center for Infrastructure Sustainability &amp; Resilience Research, Sharif University <span class="date">· Oct 2020 – Oct 2022</span></div>
+      <ul>
+        <li>Developed flood hazard mapping based on 2019 Iran floods using HEC-RAS and Sentinel-1 SAR data</li>
+        <li>Conducted comprehensive drought monitoring across Iran using multi-satellite data analysis</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Undergraduate Research Assistant</h3>
+      <div class="meta">Sharif University of Technology <span class="date">· Aug 2018 – Aug 2020</span></div>
+      <ul>
+        <li>Analyzed vegetation dynamics in Anzali Wetland using remote sensing and ML (1990–2020)</li>
+        <li>Developed advanced soil moisture algorithms; applied empirical dynamic modeling (EDM)</li>
+        <li>Investigated satellite precipitation products for flood occurrence</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- TEACHING -->
+<div class="section fade-in" id="teaching">
+  <div class="section-header">
+    <h2>Teaching Experience</h2>
+    <div class="underline"></div>
+  </div>
+
+  <div class="teaching-group">
+    <h3><i class="fas fa-university" style="margin-right:0.5rem; color:var(--blue);"></i>Penn State University</h3>
+    <div class="teaching-list">
+      <span class="teaching-chip">Machine Learning <span class="level">Graduate &amp; Undergraduate</span></span>
+      <span class="teaching-chip">Computational Methods in Civil Engineering <span class="level">Graduate &amp; Undergraduate</span></span>
+      <span class="teaching-chip">Fluid Mechanics <span class="level">Undergraduate</span></span>
+    </div>
+  </div>
+
+  <div class="teaching-group">
+    <h3><i class="fas fa-university" style="margin-right:0.5rem; color:var(--blue);"></i>Sharif University of Technology</h3>
+    <div class="teaching-list">
+      <span class="teaching-chip">Machine Learning in Air Quality Modelling <span class="level">Graduate</span></span>
+      <span class="teaching-chip">Environmental Hydrodynamics <span class="level">Graduate</span></span>
+      <span class="teaching-chip">Uncertainty Analysis in Hydrological Modeling <span class="level">Graduate</span></span>
+      <span class="teaching-chip">Fluid Mechanics <span class="level">Undergraduate</span></span>
+      <span class="teaching-chip">Surface Water Quality Modeling <span class="level">Undergraduate</span></span>
+      <span class="teaching-chip">Environmental Engineering <span class="level">Undergraduate</span></span>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-links">
+    <a href="mailto:afj5497@psu.edu"><i class="fas fa-envelope"></i> Email</a>
+    <a href="https://scholar.google.com/citations?user=aB3tFZMAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+    <a href="#"><i class="fab fa-github"></i> GitHub</a>
+  </div>
+  <p>&copy; 2025 Amirmoez Jamaat · Penn State University</p>
+</footer>
+
+<script>
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Close mobile menu on link click
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>
