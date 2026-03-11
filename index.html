@@ -7,7 +7,7 @@
   <meta name="description" content="Amirmoez Jamaat — PhD Student in Water Resource Engineering at Penn State University. Research in deep learning, data assimilation, probabilistic modeling, and flood hydrology.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     :root {
@@ -30,11 +30,13 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Inter', sans-serif;
       color: var(--text);
       background: var(--cream);
       line-height: 1.7;
+      font-size: 15px;
       -webkit-font-smoothing: antialiased;
+      letter-spacing: -0.01em;
     }
 
     /* ---- NAV ---- */
@@ -54,9 +56,9 @@
       padding: 0 2rem; height: 60px;
     }
     .nav-name {
-      font-family: 'Source Serif 4', serif;
-      font-weight: 700; font-size: 1.15rem; color: var(--navy);
-      text-decoration: none;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700; font-size: 1.2rem; color: var(--navy);
+      text-decoration: none; letter-spacing: -0.01em;
     }
     .nav-links { display: flex; gap: 0.2rem; }
     .nav-links a {
@@ -94,13 +96,14 @@
       align-items: center; position: relative; z-index: 1;
     }
     .hero-text h1 {
-      font-family: 'Source Serif 4', serif;
-      font-size: 3rem; font-weight: 700; color: var(--white);
-      line-height: 1.15; margin-bottom: 0.6rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem; font-weight: 800; color: var(--white);
+      line-height: 1.1; margin-bottom: 0.8rem;
+      letter-spacing: -0.02em;
     }
     .hero-text .title {
-      font-size: 1.15rem; color: var(--sky);
-      font-weight: 400; margin-bottom: 1.4rem; line-height: 1.5;
+      font-size: 1.1rem; color: var(--sky);
+      font-weight: 400; margin-bottom: 1.6rem; line-height: 1.7;
     }
     .hero-text .bio {
       font-size: 0.95rem; color: rgba(255,255,255,0.72);
@@ -124,7 +127,7 @@
     .hero-links .secondary:hover { background: rgba(255,255,255,0.18); }
 
     .hero-photo {
-      width: 260px; height: 260px;
+      width: 280px; height: 340px;
       border-radius: 20px;
       background: linear-gradient(135deg, var(--sky) 0%, var(--blue) 100%);
       display: flex; align-items: center; justify-content: center;
@@ -134,7 +137,7 @@
       position: relative;
     }
     .hero-photo img {
-      width: 100%; height: 100%; object-fit: cover;
+      width: 100%; height: 100%; object-fit: cover; object-position: top center;
     }
 
     /* ---- SECTIONS ---- */
@@ -146,9 +149,10 @@
       margin-bottom: 2.5rem;
     }
     .section-header h2 {
-      font-family: 'Source Serif 4', serif;
-      font-size: 2rem; font-weight: 700; color: var(--navy);
-      margin-bottom: 0.3rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem; font-weight: 700; color: var(--navy);
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.01em;
     }
     .section-header .underline {
       width: 50px; height: 3px;
@@ -182,9 +186,10 @@
 
     /* ---- PUBLICATIONS ---- */
     .pub-group-title {
-      font-family: 'Source Serif 4', serif;
-      font-size: 1.25rem; font-weight: 600; color: var(--navy-mid);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; font-weight: 600; color: var(--navy-mid);
       margin-bottom: 1.2rem; margin-top: 2rem;
+      letter-spacing: -0.01em;
     }
     .pub-group-title:first-child { margin-top: 0; }
     .pub-card {
@@ -377,7 +382,7 @@
       .hero-text h1 { font-size: 2.2rem; }
       .hero-text .bio { max-width: 100%; }
       .hero-links { justify-content: center; }
-      .hero-photo { width: 180px; height: 180px; margin: 0 auto; }
+      .hero-photo { width: 200px; height: 250px; margin: 0 auto; }
       .nav-links { display: none; }
       .nav-links.open {
         display: flex; flex-direction: column;
@@ -419,8 +424,9 @@
     <div class="hero-text">
       <h1>Amirmoez Jamaat</h1>
       <div class="title">
-        Ph.D. Student &middot; Major in Water Resource Management &middot; Minor in Computational Science<br>
-        The Pennsylvania State University
+        <span style="display:block; margin-bottom:0.3rem;">Ph.D. Student &middot; The Pennsylvania State University</span>
+        <span style="display:block; font-size:0.95rem; opacity:0.85;">Major: Water Resource Management, Dept. of Civil &amp; Environmental Engineering</span>
+        <span style="display:block; font-size:0.95rem; opacity:0.85;">Minor: Computational Science</span>
       </div>
       <p class="bio">
         Accurate flood forecasting demands more than deterministic predictions &mdash; it requires 
@@ -718,7 +724,7 @@
       <h3>Undergraduate Research Assistant</h3>
       <div class="meta">Sharif University of Technology <span class="date">&middot; Aug 2018 &ndash; Aug 2020</span></div>
       <ul>
-        <li>Analyzed vegetation dynamics in Anzali Wetland using remote sensing and ML (1990&ndash;2020)</li>
+        <li>Analyzed Land Use/Land Cover (LULC) changes in Anzali Wetland using optical satellite data (Landsat 5, 7, 8) and machine learning methods (1990&ndash;2020)</li>
         <li>Developed advanced soil moisture algorithms; applied empirical dynamic modeling (EDM)</li>
         <li>Investigated satellite precipitation products for flood occurrence</li>
       </ul>
